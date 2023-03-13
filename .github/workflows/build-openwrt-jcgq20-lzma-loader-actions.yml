@@ -1,4 +1,4 @@
-name: jcgq20-pb-boot-actions
+name: jcgq20-lzma-loader-actions
 
 env:
   TZ: Asia/Shanghai
