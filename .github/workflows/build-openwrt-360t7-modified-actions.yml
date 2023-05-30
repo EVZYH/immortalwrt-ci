@@ -38,17 +38,17 @@ jobs:
       - name: Upload Packages
         uses: actions/upload-artifact@v3
         with:
-          name: r1-Packages
+          name: 360t7-modified-Packages
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@v3
         with:
-          name: r1-Firmwares
+          name: 360t7-modified-Firmwares
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/
 
       - name: Upload manifest
         uses: actions/upload-artifact@v3
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/
+          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360-t7-ubootmod.manifest
