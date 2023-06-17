@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360-t7-ubootmod.manifest
+          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360t7-ubootmod.manifest
