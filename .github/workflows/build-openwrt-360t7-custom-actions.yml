@@ -1,4 +1,4 @@
-name: 360t7-modified-actions
+name: 360t7-custom-actions
 
 env:
   TZ: Asia/Shanghai
@@ -34,18 +34,18 @@ jobs:
 
       - name: Build r1
         run: |
-          chmod +x build-360t7-modified.sh && ./build-360t7-modified.sh
+          chmod +x build-360t7-custom.sh && ./build-360t7-custom.sh
 
       - name: Upload Packages
         uses: actions/upload-artifact@v3
         with:
-          name: 360t7-modified-Packages
+          name: 360t7-custom-Packages
           path: ${{ env.BIN_PATH }}/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@v3
         with:
-          name: 360t7-modified-Firmwares
+          name: 360t7-custom-Firmwares
           path: ${{ env.BIN_PATH }}/targets/
 
       - name: Upload manifest
