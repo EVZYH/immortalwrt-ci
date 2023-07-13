@@ -7,6 +7,7 @@ on:
   push:
     branches: 
       - main
+  workflow_dispatch:
   schedule:
     - cron: 0 0 * * 5
 
@@ -39,16 +40,16 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: r1-Packages
-          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/packages/
+          path: ${{ env.BIN_PATH }}/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@v3
         with:
           name: r1-Firmwares
-          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/
+          path: ${{ env.BIN_PATH }}/targets/
 
       - name: Upload manifest
         uses: actions/upload-artifact@v3
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/x86/64/immortalwrt-x86-64-generic.manifest
+          path: ${{ env.BIN_PATH }}/targets/x86/64/immortalwrt-x86-64-generic.manifest
