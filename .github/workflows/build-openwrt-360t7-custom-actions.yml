@@ -32,7 +32,7 @@ jobs:
           sudo apt-get -qq autoremove --purge
           sudo apt-get -qq clean
 
-      - name: Build r1
+      - name: Build 360t7-custom
         run: |
           chmod +x build-360t7-custom.sh && ./build-360t7-custom.sh
 
