@@ -1,4 +1,4 @@
-name: 360t7-custom-actions
+name: jcgq20-pb-boot-actions
 
 env:
   TZ: Asia/Shanghai
@@ -31,25 +31,23 @@ jobs:
           sudo rm -rf /opt/hostedtoolcache/go /opt/hostedtoolcache/Ruby /opt/hostedtoolcache/node
           sudo apt-get -qq autoremove --purge
           sudo apt-get -qq clean
-
-      - name: Build 360t7-custom
+      - name: Build jcgq20-pb-boot
         run: |
-          chmod +x build-360t7-custom.sh && ./build-360t7-custom.sh
-
+          chmod +x build-jcgq20-pb-boot.sh && ./build-jcgq20-pb-boot.sh
       - name: Upload Packages
         uses: actions/upload-artifact@v3
         with:
-          name: 360t7-custom-Packages
-          path: ${{ env.BIN_PATH }}/packages/
+          name: jcg-q20-pb-boot-Packages
+          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@v3
         with:
-          name: 360t7-custom-Firmwares
-          path: ${{ env.BIN_PATH }}/targets/
+          name: jcg-q20-pb-boot-Firmwares
+          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/
 
       - name: Upload manifest
         uses: actions/upload-artifact@v3
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: ${{ env.BIN_PATH }}/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360t7-ubootmod.manifest
+          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/ramips/mt7621/immortalwrt-ramips-mt7621-jcg_q20-pb-boot.manifest
