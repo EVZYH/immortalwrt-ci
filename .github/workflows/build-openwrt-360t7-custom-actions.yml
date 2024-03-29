@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Build Environment Initialization
         run: |
@@ -37,19 +37,19 @@ jobs:
           chmod +x build-360t7-custom.sh && ./build-360t7-custom.sh
 
       - name: Upload Packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: 360t7-custom-Packages
           path: ${{ env.BIN_PATH }}/packages/
 
       - name: Upload Firmwares
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: 360t7-custom-Firmwares
           path: ${{ env.BIN_PATH }}/targets/
 
       - name: Upload manifest
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: manifest-${{ env.FILE_DATE }}
           path: ${{ env.BIN_PATH }}/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360t7-ubootmod.manifest

@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Build Environment Initialization
         run: |
@@ -37,19 +37,13 @@ jobs:
           chmod +x build-r1.sh && ./build-r1.sh
 
       - name: Upload Packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: r1-Packages
           path: ${{ env.BIN_PATH }}/packages/
 
       - name: Upload Firmwares
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: r1-Firmwares
           path: ${{ env.BIN_PATH }}/targets/
-
-      - name: Upload manifest
-        uses: actions/upload-artifact@v3
-        with:
-          name: manifest-${{ env.FILE_DATE }}
-          path: ${{ env.BIN_PATH }}/targets/x86/64/immortalwrt-x86-64-generic.manifest

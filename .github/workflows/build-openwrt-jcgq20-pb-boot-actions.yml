@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Build Environment Initialization
         run: |
@@ -35,19 +35,19 @@ jobs:
         run: |
           chmod +x build-jcgq20-pb-boot.sh && ./build-jcgq20-pb-boot.sh
       - name: Upload Packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: jcg-q20-pb-boot-Packages
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/packages/
 
       - name: Upload Firmwares
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: jcg-q20-pb-boot-Firmwares
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/
 
       - name: Upload manifest
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: manifest-${{ env.FILE_DATE }}
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/ramips/mt7621/immortalwrt-ramips-mt7621-jcg_q20-pb-boot.manifest
