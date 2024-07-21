@@ -1,4 +1,4 @@
-name: jcgq20-pb-boot-actions
+name: xiaomi-ac2100-actions
 
 env:
   TZ: Asia/Shanghai
@@ -31,23 +31,23 @@ jobs:
           sudo rm -rf /opt/hostedtoolcache/go /opt/hostedtoolcache/Ruby /opt/hostedtoolcache/node
           sudo apt-get -qq autoremove --purge
           sudo apt-get -qq clean
-      - name: Build jcgq20-pb-boot
+      - name: Build xiaomi-ac2100
         run: |
-          chmod +x build-jcgq20-pb-boot.sh && ./build-jcgq20-pb-boot.sh
+          chmod +x build-xiaomi-ac2100.sh && ./build-xiaomi-ac2100.sh
       - name: Upload Packages
         uses: actions/upload-artifact@main
         with:
-          name: jcg-q20-pb-boot-Packages
+          name: xiamo-ac2100-Packages
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@main
         with:
-          name: jcg-q20-pb-boot-Firmwares
+          name: xiaomi-ac2100-Firmwares
           path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/
 
       - name: Upload manifest
         uses: actions/upload-artifact@main
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/ramips/mt7621/immortalwrt-ramips-mt7621-jcg_q20-pb-boot.manifest
+          path: /home/runner/work/immortalwrt-ci/immortalwrt-ci/immortalwrt/bin/targets/ramips/mt7621/immortalwrt-ramips-mt7621-xiaomi_mi-router-ac2100.manifest
