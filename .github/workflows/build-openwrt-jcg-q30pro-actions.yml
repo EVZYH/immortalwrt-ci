@@ -1,4 +1,4 @@
-name: jcg-q30pro-custom-actions
+name: jcg-q30pro-actions
 
 env:
   TZ: Asia/Shanghai
@@ -32,24 +32,24 @@ jobs:
           sudo apt-get -qq autoremove --purge
           sudo apt-get -qq clean
 
-      - name: Build jcg-q30pro-custom
+      - name: Build jcg-q30pro
         run: |
-          chmod +x build-jcg-q30pro-custom.sh && ./build-jcg-q30pro-custom.sh
+          chmod +x build-jcg-q30pro.sh && ./build-jcg-q30pro.sh
 
       - name: Upload Packages
         uses: actions/upload-artifact@main
         with:
-          name: jcg-q30pro-custom-Packages
+          name: jcg-q30pro-Packages
           path: ${{ env.BIN_PATH }}/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@main
         with:
-          name: jcg-q30pro-custom-Firmwares
+          name: jcg-q30pro-Firmwares
           path: ${{ env.BIN_PATH }}/targets/
 
       - name: Upload manifest
         uses: actions/upload-artifact@main
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: ${{ env.BIN_PATH }}/targets/mediatek/filogic/immortalwrt-mediatek-filogic_jcg-q30-pro-ubootmod.manifest
+          path: ${{ env.BIN_PATH }}/targets/mediatek/filogic/immortalwrt-mediatek-filogic-jcg_q30.manifest

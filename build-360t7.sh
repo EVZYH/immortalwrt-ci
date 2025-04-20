@@ -10,7 +10,7 @@ cd "${OP_BUILD_PATH}"/immortalwrt || exit
 git checkout v24.10.1
 ./scripts/feeds update -a && ./scripts/feeds install -a
 rm -rf ./tmp && rm -rf .config
-mv "${OP_BUILD_PATH}"/r1.config "${OP_BUILD_PATH}"/immortalwrt/.config
+mv "${OP_BUILD_PATH}"/360t7.config "${OP_BUILD_PATH}"/immortalwrt/.config
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 make defconfig
 make download -j8

@@ -1,4 +1,4 @@
-name: 360t7-custom-actions
+name: 360t7-actions
 
 env:
   TZ: Asia/Shanghai
@@ -32,24 +32,24 @@ jobs:
           sudo apt-get -qq autoremove --purge
           sudo apt-get -qq clean
 
-      - name: Build 360t7-custom
+      - name: Build 360t7
         run: |
-          chmod +x build-360t7-custom.sh && ./build-360t7-custom.sh
+          chmod +x build-360t7.sh && ./build-360t7.sh
 
       - name: Upload Packages
         uses: actions/upload-artifact@main
         with:
-          name: 360t7-custom-Packages
+          name: 360t7-Packages
           path: ${{ env.BIN_PATH }}/packages/
 
       - name: Upload Firmwares
         uses: actions/upload-artifact@main
         with:
-          name: 360t7-custom-Firmwares
+          name: 360t7-Firmwares
           path: ${{ env.BIN_PATH }}/targets/
 
       - name: Upload manifest
         uses: actions/upload-artifact@main
         with:
           name: manifest-${{ env.FILE_DATE }}
-          path: ${{ env.BIN_PATH }}/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360t7-ubootmod.manifest
+          path: ${{ env.BIN_PATH }}/targets/mediatek/filogic/immortalwrt-mediatek-filogic-qihoo_360t7.manifest
