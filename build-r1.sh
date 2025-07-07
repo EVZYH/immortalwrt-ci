@@ -7,7 +7,7 @@ export OP_BUILD_PATH=$PWD
 git clone -b openwrt-24.10 --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
 
 cd "${OP_BUILD_PATH}"/immortalwrt || exit
-git checkout v24.10.1
+git checkout v24.10.2
 ./scripts/feeds update -a && ./scripts/feeds install -a
 rm -rf ./tmp && rm -rf .config
 mv "${OP_BUILD_PATH}"/r1.config "${OP_BUILD_PATH}"/immortalwrt/.config
